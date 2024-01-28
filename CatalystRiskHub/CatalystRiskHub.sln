@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalystRiskHub", "CatalystRiskHub\CatalystRiskHub.csproj", "{60AD1990-051E-4F11-995C-8988CB08FD22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatalystRiskHub", "api\CatalystRiskHub.csproj", "{60AD1990-051E-4F11-995C-8988CB08FD22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
