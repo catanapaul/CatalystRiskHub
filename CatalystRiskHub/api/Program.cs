@@ -1,18 +1,17 @@
 using CatalystRiskHub.DataAccess.Data;
 using CatalystRiskHub.Endpoints;
+using CatalystRiskHub.Extensions;
 using Microsoft.EntityFrameworkCore;
-using Swashbuckle.AspNetCore.SwaggerUI;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAuthorization();
+builder.Services.AddApiCors(builder.Configuration);
 builder.Services.AddAuthentication("Bearer").AddJwtBearer();
 builder.Services.AddDbContext<CatalystRiskHubDbContext>(o => o.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]));
-// builder.Services.Configure<SwaggerGeneratorOptions>(o => { o.InferSecuritySchemes = true; });
 builder.Services.AddSwaggerDocument();
 
 var app = builder.Build();
@@ -26,6 +25,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUi();
 }
 
+app.UseApiCors();
 app.UseHttpsRedirection();
 
 app.Run();

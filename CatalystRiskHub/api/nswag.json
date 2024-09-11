@@ -55,7 +55,7 @@
       "outputType": "Swagger2",
       "newLineBehavior": "Auto",
       "assemblyPaths": [
-        "bin/$(Configuration)/net8.0/CatalystRiskHub.dll"
+        "bin/Debug/net8.0/CatalystRiskHub.dll"
       ],
       "assemblyConfig": null,
       "referencePaths": [],
